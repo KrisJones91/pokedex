@@ -9,19 +9,20 @@ export default class Pokemon {
         this.weight = data.weight
         this.height = data.height
         this.types = data.types[0].type.name
+        this.sectype = data.types[1].type.name || ''
         this.sprites = data.sprites.front_default
 
     }
 
     get Template() {
         return `
-                <div class="card-top bg-primary">
-                    <h3>${this.name}</h3>
+                <div class="card-top bg-dark text-white">
+                    <h3>${this.name.toUpperCase()}</h3>
                 </div>
                 <div class="card-body">
                     <img src="${this.img}" alt="" srcset="" width="300"; height="300">
-                    <p>${this.types}</p>
-                    <p>Height: ${this.height} - Weight: ${this.weight}</p>
+                    <p>${this.types} - ${this.sectype}</p>
+                    <p><b>Height:</b> ${this.height} - <b>Weight:</b> ${this.weight}</p>
                 </div>
                 <div class="card-footer">
                     <p>${this.moves}</p>

@@ -10,8 +10,8 @@ class PdexService {
         let res = await pdexApi.get('pokemon?limit=100')
         ProxyState.pdexPoke = res.data.results
     }
-    async getPokemon(name) {
-        let res = await pdexApi.get(`pokemon/${name}`)
+    async getPokemon(id) {
+        let res = await pdexApi.get(`pokemon/${id}`)
         ProxyState.activePoke = new Pokemon(res.data)
 
     }
